@@ -75,40 +75,5 @@ public:
 
 		return model;
 	}
-
-	void RamadanLamp(NoTextureDefaultParameters);
-
-	void BigGate(NoTextureDefaultParameters);
-	void BigGate2(NoTextureDefaultParameters, mat4 model0);
-
-	void column(NoTextureDefaultParameters);
-
-	void Minaret1(NoTextureDefaultParameters);
-	void Minaret1(NoTextureDefaultParameters, mat4 model);
-	void Minaret2(NoTextureDefaultParameters);
-	void Minaret3(NoTextureDefaultParameters);
-
-
-	void Dome_of_the_Rock(NoTextureDefaultParameters);
-	void Dome_of_the_Chain(NoTextureDefaultParameters);
-
-	void Dome_of_the_Rock_DOOR1(NoTextureDefaultParameters);
-	void Dome_of_the_Rock_DOOR2(NoTextureDefaultParameters);
-
-	void Dome_of_the_Rock_GATE2(NoTextureDefaultParameters);
-	void Dome_of_the_Rock_GATE3(NoTextureDefaultParameters);
-	void Dome_of_the_Rock_GATE4(NoTextureDefaultParameters);
-
-	void Dome_of_the_Rock_GROUND(NoTextureDefaultParameters);
-	void Dome_of_the_Rock_Stairs(NoTextureDefaultParameters);
-
-	void idk1(NoTextureDefaultParameters);
-	void idk2(NoTextureDefaultParameters);
-	void idk3(NoTextureDefaultParameters);
-	void idk3(NoTextureDefaultParameters, mat4 model0);
-	void idk4(NoTextureDefaultParameters);
-
-	void Qibali_Dome_for_abd(NoTextureDefaultParameters);
-	void Qibali_Dome_for_abd(NoTextureDefaultParameters, mat4 model0);
 };
 

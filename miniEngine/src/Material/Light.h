@@ -11,7 +11,7 @@ private:
 	Camera* camera;
 public:
 
-	std::string state = "son";
+	std::string state = "day";
 	std::vector<v3>lampsPositions;
 	Shader* light_shader;
 	std::vector<Mesh*>& night_meshes;
@@ -24,79 +24,11 @@ public:
 		:camera(camera), night_meshes(night_meshes)
 	{
 		designer = new ShapeDesigner();
-
-
-		//lampsPositions = {v3(-5,30,0)};
-		//lampScale = 0.1;
-		//lampRotation = 90;
-		//designer->RamadanLamp(this->night_meshes, lampScale, lampRotation, lampsPositions[0]);
-
-		lampsPositions = {
-			v3(0, 9,-70),
-			v3(70, 9, 0),
-			v3(0, 9, 50),
-			v3(-50, 9, 0),
-
-
-			//walls
-			v3(-120, 8,  340),
-			v3(+120, 8,  340),
-			v3(-30 , 8,  340),
-			v3(+30 , 8,  340),
-			v3(-120, 8, -340),
-
-
-			//qibali
-			v3(14 +35, 6, -210),
-			v3(14 -35, 6, -210),
-
-			//qibali chairs
-			v3(120, 6, -240),
-			v3(120, 6, -280),
-		};
-
-		for (int i = 0; i < 7; i++) {
-			if(i < 6)
-				lampsPositions.push_back(v3(182 ,6, 260 - i * 96));
-			lampsPositions.push_back(v3(-182,6, 260 - i * 96));
-		}
-
-		//small lamp
-		lampScale = 0.1;
-		lampRotation = 90;
-		for (int i = 0; i < 0 ; i++) {
-			designer->RamadanLamp(this->night_meshes, lampScale, lampRotation, lampsPositions[lampsPositions.size() - 1 - i]);
-		}
-
-		//No Lamp Object--------
-		//miaret moon
-		lampsPositions.push_back(v3(139, 60, -320));
-		lampsPositions.push_back(v3(139, 73, -320));
-		lampsPositions.push_back(v3(139, 73, -320));
-		
-		//qibali inside
-		lampsPositions.push_back(v3(14 + 35, 5, -250));
-		lampsPositions.push_back(v3(14 - 35, 5, -250));
-		//qibali dome
-		lampsPositions.push_back(v3(14, 30, -320));
-		//rock dome
-		lampsPositions.push_back(v3(-7, 40, 0));
-		lampsPositions.push_back(v3(-7, 40, 0));
-		//chain dome
-		lampsPositions.push_back(v3(30, 16, 0));
-
-		lampScale = 0.2;
-		lampRotation = 90;
-
-
-		for (int i = 0; i < lampsPositions.size() - 9; i++) {
-			designer->RamadanLamp(this->night_meshes, lampScale, lampRotation, lampsPositions[i]);
-		}
 	};
 
 	void Update(Shader*& shader)
 	{
-		if (state == "son")
+		if (state == "day")
 		{
 			Son(shader);
 			noFlashLight(camera->Position, camera->Front, shader);
@@ -105,7 +37,7 @@ public:
 			}
 		}
 
-		if (state == "moon")
+		if (state == "night")
 		{
 			Moon(shader);
 			flashLight(camera->Position, camera->Front, shader);

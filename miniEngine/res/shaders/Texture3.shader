@@ -30,7 +30,7 @@ void main()
 #shader fragment
 #version 330 core
 
-#define MAX_NOM_OF_LAMPS 13 + 13 + 9
+//#define MAX_NOM_OF_LAMPS 13 + 13 + 9
 
 out vec4 FragColor;
 
@@ -75,7 +75,7 @@ struct Flash {
 };
 
 uniform sampler2D diffuse0;
-//uniform sampler2D specular0;
+uniform sampler2D specular0;
 
 uniform vec3 viewPos;
 uniform float shininess;
